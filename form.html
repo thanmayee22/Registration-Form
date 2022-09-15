@@ -1,0 +1,294 @@
+<html>
+<head>
+<title>Form</title>
+<style>
+
+hr	{: px black}
+
+h1	{background-color: purple; font-size: 50px; font-family: verdana; color: yellow;
+    border-bottom: 5px solid black; margin: pc; margin-left: 20pc; margin-right: 20pc
+	}
+	
+legend	{background-color: brown; font-size: 30px; color: white; font-family: verdana;
+		border: 3px solid black; font-style: italic;
+		}
+		
+input	{border: 2px solid black; background-color: white; padding: 3px 80px;
+		font-size: 20px;
+		}
+		
+tr		{font-size: 20px; color: black; font-family: verdana; font-weight: bold;
+		text-decoration: underline; <!--font-style: italic;-->
+		}
+		
+td		{padding: 3px 20px; 
+		}
+		
+fieldset {border: 5px solid black; margin: 5pc; background-color: ; margin-top: 0pc;
+		 margin-right: pc; margin-left: pc; background-image: url(L.jpg);
+		 margin-bottom: pc
+		 }
+		
+select	{border: 2px solid black; padding: 6px 10px; font-family: verdana;
+		font-size: 14px;
+		}
+
+.submitbtn 	{border: 3px solid green; padding: 1px 10px; font-size: 20px;
+			background-color: green; color: white;
+			}
+
+.cancelbtn	{border: 3px solid red; padding: 1px 10px; font-size: 20px;
+			background-color: red; color: white;
+			}
+		
+body		{background-image: url(M.jpg);
+			}
+		
+</style>
+
+<script type="text/javascript">
+
+<!--function Validate()
+{
+var fname = document.forms["form"]["fname"];
+var lname = document.forms["form"]["lname"];
+var address = document.forms["form"]["address"];
+var email = document.forms["form"]["email"];
+var password = document.forms["form"]["password"];
+var contact = document.forms["form"]["contact"];
+
+var fname_error = document.getElementById("fname_error");
+var lname_error = document.getElementById("lname_error");
+var address_error = document.getElementById("address_error");
+var email_error = document.getElementById("email_error");
+var password_error = document.getElementById("password_error");
+var contact_error = document.getElementById("contact_error");
+
+fname.addEventListener("blur", fnameVerify, true);
+lname.addEventListener("blur", lnameVerify, true);
+address.addEventListener("blur", addressVerify, true);
+email.addEventListener("blur", emailVerify, true);
+password.addEventListener("blur", passwordVerify, true);
+contact.addEventListener("blur", contactVerify, true);
+
+	if (fname.value == "")
+	{
+		fname.style.border = "1px solid red";
+		fname_error.textContent = "First Name is required";
+		fname.focus();
+		return false;
+	}
+ 
+	if (lname.value == "")
+	{
+		lname.style.border = "1px solid red";
+		lname_error.textContent = "Last Name is required";
+		lname.focus();
+		return false;
+	}
+
+	if (address.value == "")
+	{
+		address.style.border = "2px solid red";
+		address_error.textContent = "Address is required";
+		address.focus();
+		return false;
+	}
+
+	if (email.value == "")
+	{
+		email.style.border = "1px solid red";
+		email_error.textContent = "Email is required";
+		email.focus();
+		return false;
+	}
+
+	if (password.value == "")
+	{
+		password.style.border = "1px solid red";
+		password_error.textContent = "Password is required";
+		password.focus();
+		return false;
+	}
+	if (contact.value == "")
+	{
+		contact.style.border = "1px solid red";
+		contact_error.textContent = "Contact is required";
+		contact.focus();
+		return false;
+	}
+}
+
+function fnameVerify()
+{
+	if (fname.value !="")
+	{
+		fname.style.border = "1px solid #5E6E66";
+		fname_error.innerHTML = "";
+		return true;
+	}
+}
+
+function lnameVerify()
+{
+	if (lname.value !="")
+	{
+		lname.style.border = "1px solid #5E6E66";
+		lname_error.innerHTML = "";
+		return true;
+	}
+}
+
+function addressVerify()
+{
+	if (address.value !="")
+	{
+		address.style.border = "1px solid #5E6E66";
+		address_error.innerHTML = "";
+		return true;
+	}
+}
+
+function emailVerify()
+{
+	if (email.value !="")
+	{
+		email.style.border = "1px solid #5E6E66";
+		email_error.innerHTML = "";
+		return true;
+	}
+}
+
+function passwordVerify()
+{
+	if (password.value !="")
+	{
+		password.style.border = "1px solid #5E6E66";
+		password_error.innerHTML = "";
+		return true;
+	}
+}
+
+function contactVerify()
+{
+	if (contact.value !="")
+	{
+		contact.style.border = "1px solid #5E6E66";
+		contact_error.innerHTML = "";
+		return true;
+	}
+}
+
+function lettersOnly(input)
+{
+	var a = /[^a-z]/gi;
+	input.value = input.value.replace(a,"");
+}
+
+function regmsg()
+{
+	alert("WE HAVE SUCCESSFULLY REGISTERED YOU...!!!");
+}
+-->
+</script>
+  
+
+</head>
+
+<body bgcolor="#b8b894">
+<h1 align="center">REGISTRATION FORM</h2> 
+<hr color="black">
+
+<form name="form" action="database.php" method = "POST"></br>
+<fieldset>
+<legend align="center">YOUR INFORMATION</legend>
+
+<table></br>
+
+<tr><td>FIRST NAME:</td>  
+<td><input type="textbox" size="17" maxlength="10" placeholder="Your name" pattern=[A-Z a-z] name="fname" onkeyup="lettersOnly(this)" required>
+	<div id="fname_error"></div>
+</td></tr>
+
+<tr><td> LAST NAME:</td> 
+<td><input type="text" size="17" maxlength="10" placeholder="Your lastname" pattern=[A-Z a-z] name="lname" onkeyup="lettersOnly(this)" required>
+	<div id="lname_error"></div>
+</td></tr>
+
+<tr><td> ADDRESS:</td> 
+<td><input type="text" size="30" maxlength="30" placeholder="Your address" pattern=[A-Z a-z] name="address" required>
+	<div id="address_error"></div>
+</td></tr>
+
+<tr><td> EMAIL ADDRESS :</td> 
+<td><input type="text" size="30" maxlength="30" placeholder="Your Email" name="email" required>
+	<div id="email_error"></div>
+</td></tr>
+
+<tr><td> PASSWORD:</td> 
+<td><input type="password" size="17" maxlength="10" name="password" placeholder="Password" required>
+	<div id="password_error"></div>
+</td></tr>
+
+<tr><td> CONTACT:</td> 
+<td><input type="text" id="contact_error" size="17" maxlength="10" name="contact" placeholder="Contact number" required>
+	<div id="contact_error"></div>
+</td></tr>
+
+<tr><td> DATE OF BIRTH:</td> 
+<td><input type="date" name="dob" value = "dob" required>
+</td></tr>
+
+<tr><td> GENDER:</td> 
+<td><input type="radio" name="gender" value = "Male" required>Male 
+</br>
+<input type="radio" name="gender" value = "Female" required>Female
+</td></tr>
+
+<tr><td> EDUCATION:</td>  
+<td><input type="checkbox" name="education" checked="checked">B.TECH
+<input type="checkbox" name="education">M.TECH
+<input type="checkbox" name="education">B.SC
+<input type="checkbox" name="education">M.SC
+<input type="checkbox" name="education">B.COM
+<input type="checkbox" name="education">M.COM
+<input type="checkbox" name="education">OTHER
+</tr>
+
+<tr><td>BLOOD GROUP:</td> 
+<td>
+<select name = "bloodgroup" required>
+		<option value="A" selected hidden>Select Blood Group</option>
+		<option value="A" required>A</option>
+		<option value="B" required>B</option>
+		<option value="AB" required>AB</option>
+		<option value="O" required>O</option>
+</select>
+</td></tr>
+
+<tr><td>COUNTRY:</td> 
+<td>
+<select name = "country" required>
+		<option value="United States">Select Country</option>
+		<option value="United States">United States</option>
+		<option value="United Kingdom">United Kingdom</option>
+		<option value="India">India</option>
+		<option value="Germany">Germany</option>
+		<option value="Canada">Canada</option>
+		<option value="Australia">Australia</option>
+		<option value="Japan">Japan</option>
+		<option value="France">France</option>
+</select>
+</td></tr>
+<tr>
+<td><input class = "submitbtn" type = "submit" value = "Submit"></td>
+</tr>
+</table>
+</form></br>
+
+
+
+</fieldset>
+
+</body>
+</html>
